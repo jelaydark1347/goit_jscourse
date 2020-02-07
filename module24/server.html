@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Обмен сообщениями в режиме реального времени</title>
+</head>
+<body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  let localMessages = [];
+
+  // начальное обновление локального сообщения
+  axios.get('http://localhost:8080/messages')
+    .then(({data}) => localMessages = data.messages);
+
+  // обновляем список сообщений
+  const updateMessages = () => {
+    axios.get('http://localhost:8080/messages')
+      .then(({data}) => {
+        const difference = data.messages.splice(localMessages.length);
+        difference.forEach(message => {
+          console.log(message);
+          localMessages.push(message);
+        });
+      })
+      .catch(console.log);
+  }
+
+  // отправляем сообщение
+  const sendMessage = text => {
+    axios.post('http://localhost:8080/messages', {text});
+  }
+  // каждые 200 мс проверяем, есть ли новые сообщения
+  setInterval(updateMessages, 200);
+</script>
+</body>
+</html>

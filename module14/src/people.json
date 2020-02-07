@@ -1,0 +1,10 @@
+{
+  "name": "NAme",
+  "phone": "+38 095 666 66 66",
+  "objectField": {
+
+  },
+  "arrayField": [],
+  "boolField": false,
+  "undefined": null
+}

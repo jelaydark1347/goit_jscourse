@@ -1,0 +1,19 @@
+body {
+    padding: 0.3em 1em;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    -webkit-animation: pulsate 1.2s linear infinite;
+    animation: pulsate 1.2s linear infinite;
+}
+.dark {
+    background: #0C9C0D linear-gradient(#82D18D, #0C9C0D);
+    box-shadow: inset #72DE26 0 -1px 1px, inset 0 1px 1px #98FF98,
+                #3CAA3C 0 0 0 1px, rgba(0, 0, 0, 0.3) 0 2px 5px;
+    color: #fff;
+}
+
+.light {
+    background: #fff;
+    color: #0C9C0D;
+}

@@ -1,0 +1,12 @@
+#pool {
+    background-color: blue;
+    width: 200px;
+    height: 150px;
+}
+
+#person {
+    position: absolute;
+    background: black;
+    width: 20px;
+    height: 20px;
+}

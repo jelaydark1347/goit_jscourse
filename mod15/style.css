@@ -1,0 +1,16 @@
+body * {
+    margin: 10px;
+    border: 1px solid blue;
+}
+
+#btn {
+    background-color: blue;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+
+#area {
+    width: 20px;
+    height: 20px;
+    background-color: gray;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "mod17",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Hello tests\" && npm start",
+    "custom": "echo \"MY CUSTOM\" && rm -rf index.html",
+    "build": "babel src -d lib"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "validator": "^12.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6"
+  },
+  "keywords": [],
+  "description": ""
+}

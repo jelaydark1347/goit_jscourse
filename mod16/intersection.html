@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lazy Load Images</title>
+    <style>
+        div {
+            height: 400px;
+        }
+        img {
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div style="">
+        <img alt="loading..." class="lzy_img" src="lazy_img.jpg"
+             data-src="https://www.itprotoday.com/sites/itprotoday.com/files/styles/article_featured_retina/public/uploads/2014/08/clouds-595x335_1.jpg?itok=fVxJQ2Ed" />
+        <hr />
+    </div>
+    <div style="">
+        <img alt="loading..." class="lzy_img" src="lazy_img.jpg"
+             data-src="https://www.itprotoday.com/sites/itprotoday.com/files/styles/article_featured_retina/public/uploads/2014/08/clouds-595x335_1.jpg?itok=fVxJQ2Ed" />
+        <hr />
+    </div>
+    <div style="">
+        <img alt="loading..." class="lzy_img" src="lazy_img.jpg"
+             data-src="https://www.itprotoday.com/sites/itprotoday.com/files/styles/article_featured_retina/public/uploads/2014/08/clouds-595x335_1.jpg?itok=fVxJQ2Ed" />
+        <hr />
+    </div>
+    <div style="">
+        <img alt="loading..." class="lzy_img" src="lazy_img.jpg"
+             data-src="https://www.itprotoday.com/sites/itprotoday.com/files/styles/article_featured_retina/public/uploads/2014/08/clouds-595x335_1.jpg?itok=fVxJQ2Ed" />
+        <hr />
+    </div>
+    <div style="">
+        <img alt="loading..." class="lzy_img" src="lazy_img.jpg"
+             data-src="https://www.itprotoday.com/sites/itprotoday.com/files/styles/article_featured_retina/public/uploads/2014/08/clouds-595x335_1.jpg?itok=fVxJQ2Ed" />
+        <hr />
+    </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const options = {
+      rootMargin: '-30px',
+      threshold: 1,
+    };
+    const imageObserver = new IntersectionObserver((entries, imgObserver) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const lazyImage = entry.target
+          console.log("lazy loading ", lazyImage)
+          lazyImage.src = lazyImage.dataset.src
+        }
+      })
+    }, options);
+    const arr = document.querySelectorAll('img.lzy_img')
+    arr.forEach((v) => {
+      imageObserver.observe(v);
+    })
+  })
+</script>
+</body>
+</html>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./src/style.css">
+    <title>Address book</title>
+</head>
+<body>
+    <!-- THE MAIN CONTAINER -->
+    <!-- PAGE IS HERE -->
+    <div id="main"></div>
+
+
+    <template id="templateAddressBook">
+        <header class="main-header">
+            {{ header }}
+        </header>
+        <ul class="wrapper">
+            {{#each people}}
+            <li>
+                <div class="name">{{this.name}}</div>
+                <div class="phone">{{this.phone}}</div>
+                <button
+                    class="call-btn"
+                    onClick="call(`{{this.name}}`, `{{this.phone}}`)"
+                >
+                    Call
+                </button>
+            </li>
+            {{/each}}
+        </ul>
+    </template>
+
+    <button id="theme">
+        theme change
+    </button>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="src/index.js"></script>
+<!--    <script src="src/theme2.js"></script>-->
+    <script src="src/theme3.js"></script>
+</body>
+</html>
